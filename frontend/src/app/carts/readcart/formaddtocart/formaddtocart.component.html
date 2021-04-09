@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div class="form-group row">
+    <label for="anzahl" class="col-sm-2 col-form-label">Anzahl</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" formControlName="anzahlControl" id="anzahl" >
+    </div>
+  </div>
+
+
+
+  <div class="form-group row">
+    <div class="col-sm-6">
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="!form.valid">Update</button>
+    </div>
+    <div class="col-sm-6">
+      <button type="cancel" class="btn btn-secondary btn-block" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</form>

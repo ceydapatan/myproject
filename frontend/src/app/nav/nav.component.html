@@ -1,0 +1,41 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+
+        <a mat-list-item [routerLink]="['/aboutus']">About Us</a>
+        <a mat-list-item [routerLink]="['/read']">Shop</a>
+        <a mat-list-item [routerLink]="['/readcart']">My Cart</a>
+        <a mat-list-item [routerLink]="['/contact']">Contact</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="accent">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>My Online Shop</span>
+
+      <a [routerLink]="['/readcart']" class="cart-icon float-right" >
+      <i-bs
+        name="cart3"
+        class="text-primary"
+        width="2rem"
+        height="2rem">
+      </i-bs>
+      </a>
+
+
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

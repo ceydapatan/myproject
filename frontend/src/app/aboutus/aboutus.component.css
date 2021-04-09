@@ -1,0 +1,23 @@
+.about-section {
+
+  padding-top: 50px;
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+  display: flex;
+  align-content: center;
+}
+.lottie{
+
+  align-items: center;
+}
+
+.rounded-corners
+{
+  border-radius: 50px;
+  margin-left: 10%;
+
+}
+
+

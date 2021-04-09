@@ -1,0 +1,51 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { UpdateComponent } from './items/update/update.component';
+import { ReadComponent } from './items/read/read.component';
+import { DeleteComponent } from './items/delete/delete.component';
+import {CreatecartComponent} from './carts/createcart/createcart.component';
+import {UpdatecartComponent} from './carts/updatecart/updatecart.component';
+import {ReadcartComponent} from './carts/readcart/readcart.component';
+import {DeletecartComponent} from './carts/deletecart/deletecart.component';
+import {CheckoutComponent} from './carts/readcart/checkout/checkout.component';
+import {AboutusComponent} from './aboutus/aboutus.component';
+import {ContactComponent} from './contact/contact.component';
+
+
+
+const routes: Routes = [
+
+  //Info
+  { path: 'aboutus', component: AboutusComponent },
+  { path: 'contact', component: ContactComponent },
+
+
+
+
+  // routes für die items
+  { path: 'update', component: UpdateComponent },
+  { path: 'update/:id', component: UpdateComponent },
+  { path: 'read', component: ReadComponent },
+  { path: 'read/:id', component: ReadComponent },
+  { path: 'delete', component: DeleteComponent },
+  { path: 'delete/:id', component: DeleteComponent },
+
+  // routes für die carts
+  { path: 'createcart', component: CreatecartComponent },
+  { path: 'updatecart', component: UpdatecartComponent },
+  { path: 'updatecart/:id', component: UpdatecartComponent },
+  { path: 'readcart', component: ReadcartComponent },
+  { path: 'readcart/checkout', component: CheckoutComponent },
+
+  { path: 'readcart/:id', component: ReadcartComponent },
+  { path: 'deletecart', component: DeletecartComponent },
+  { path: 'deletecart/:id', component: DeletecartComponent },
+
+
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

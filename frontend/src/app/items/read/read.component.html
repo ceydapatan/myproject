@@ -1,0 +1,290 @@
+
+<div *ngIf="selectedId ==0" class="input-group rounded">
+  <input [(ngModel)]="jewelryName" (keyup.enter)="search()" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+         aria-describedby="search-addon" />
+  <span class="input-group-text border-0" id="search-addon">
+    <i-bs (click)="search()"
+      name="search"
+      class="text-primary"
+      width="2rem"
+      height="2rem">
+</i-bs>
+  </span>
+</div>
+
+<ng-container
+  *ngIf="searchNotActivated; then normal; else filter">
+</ng-container>
+
+<ng-template #normal>
+
+
+
+
+<div *ngIf="selectedId == 0" class="container">
+ <!-- <table class="table table-striped table-hover">
+
+    <table class="table table-striped table-hover">
+      <caption>List of Items in the Shop</caption>
+      <thead>
+      <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th></th>
+        <th>Availability</th>
+        <th></th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of items; let i=index; trackBy: trackByData">
+        <td>{{ i+1 }}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.stock}}</td>
+        <td><img src="{{'../../..' + item.imagePath}}" style="max-height: 50px;"></td>
+
+        <td *ngIf="item.stock > 0">
+        available</td>
+        <td *ngIf="item.stock == 0">
+          out of stock</td>
+        <td><a [routerLink]="['/read/', item.id]">
+
+          <button class="btn btn-primary btn-block">See</button>
+         </a></td>
+      </tr>
+      </tbody>
+    </table>
+  </table>
+-->
+
+
+  <div style="margin-top: 20px;" class="row">
+
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-12 mb-4">
+      <a [routerLink]="['/read/', items[0].id]" >
+
+
+        <div class="image">
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[0].imagePath}}" alt="Chains" style="width:400px; height:500px;">
+          <div class="image__overlay image__overlay--primary">
+            <div class="image__title">Chains</div>
+            <p class="image__description">
+              Price: 14.99$
+            </p>
+          </div>
+        </div>
+
+
+
+      </a>
+
+
+      <a [routerLink]="['/read/', items[1].id]">
+
+
+        <div class="image">
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[1].imagePath}}" alt="Heart Earrings" style="width:400px; height:350px;" >
+          <div class="image__overlay image__overlay--primary">
+            <div class="image__title">Heart Earrings</div>
+            <p class="image__description">
+              Price:12.99$
+            </p>
+          </div>
+        </div>
+
+
+      </a>
+
+    </div>
+
+    <div class="col-lg-4 col-md-6 mb-4">
+
+      <a [routerLink]="['/read/', items[2].id]">
+
+        <div class="image">
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[2].imagePath}}" alt="<Butterfly Rings>" style="width:400px; height:350px;">
+          <div class="image__overlay image__overlay--primary">
+            <div class="image__title">Butterfly Rings</div>
+            <p class="image__description">
+              Price: 7.99$
+            </p>
+          </div>
+        </div>
+
+
+      </a>
+      <a [routerLink]="['/read/', items[3].id]">
+
+
+        <div class="image">
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[3].imagePath}}" alt="Flower Earrings" style="width:400px; height:500px;">
+          <div class="image__overlay image__overlay--primary">
+            <div class="image__title">Flower Earrings</div>
+            <p class="image__description">
+              Price: 12.99$
+            </p>
+          </div>
+        </div>
+
+
+
+      </a>
+
+
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-4 col-md-6 mb-4">
+
+      <a [routerLink]="['/read/', items[4].id]">
+
+
+        <div class="image">
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[4].imagePath}}" alt="Blue Butterfly Earrings" style="width:400px; height:500px;">
+          <div class="image__overlay image__overlay--primary">
+            <div class="image__title">B Butterfly Earrings</div>
+            <p class="image__description">
+              Price: 12.99$
+            </p>
+          </div>
+        </div>
+
+
+
+      </a>
+
+      <a [routerLink]="['/read/', items[5].id]">
+
+        <div class="image">
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[5].imagePath}}" alt="<White Butterfly Earrings>" style="width:400px; height:350px;">
+          <div class="image__overlay image__overlay--primary">
+            <div class="image__title">W Butterfly Earrings</div>
+            <p class="image__description">
+              Price: 12.99$
+            </p>
+          </div>
+        </div>
+
+
+      </a>
+
+
+
+    </div>
+    <!--Grid column-->
+
+  </div>
+</div>
+</ng-template>
+
+
+<ng-template #filter>
+<!--
+  <div style="margin-top: 20px;" class="row">
+
+    <div *ngFor="let a of c; let j=index; ">
+
+      <div [ngClass]="{ 'col-lg-4 col-md-12 mb-4': j===0,
+                         'col-lg-4 col-md-6 mb-4': j%2 === 0 && j !== 0 }">
+
+        <div *ngFor="let element of c; let i=index; ">
+
+        <a [routerLink]="['/read/', element.id]">
+
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{element.imagePath}}" alt="{{element.name}}" style="width:400px; height:350px;">
+
+        </a>
+        </div>
+
+      </div>
+
+
+    </div>
+-->
+
+<p *ngIf="c.length !== 0">{{c.length + ' Treffer'}}</p>
+
+  <div *ngIf="c.length===0" style="max-width: 250px; margin-left: 100px;">
+
+
+    <ng-lottie  [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+
+    <h1>Unfortunately no results were found</h1>
+  </div>
+
+
+
+
+  <div *ngFor="let element of c; let i=index; ">
+
+    <div >
+      <a [routerLink]="['/read/', element.id]">
+
+
+        <div class="image">
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{element.imagePath}}" alt="{{element.name}}" style="width:400px; height:500px;">
+          <div class="image__overlay image__overlay--primary">
+            <div class="image__title">{{element.name}}</div>
+            <p class="image__description">
+              {{'Price: ' + element.price + '$'}}
+            </p>
+          </div>
+        </div>
+      </a>
+
+
+
+    </div>
+  </div>
+<!--  </div>-->
+
+</ng-template>
+
+
+
+
+
+
+<div *ngIf="selectedId > 0" class="container">
+
+  <img id="item-display" class="item-img rounded-corners float-left" src="{{'../../..' + item?.imagePath}}" style="max-height: 370px">
+
+
+  <div class="info-about-item">
+ <!-- <h1>{{ item?.name }}</h1>
+  <h1>Only {{ item?.price }} $ </h1>
+  <h1>{{ item?.stock }} products available<span class="dot"></span>
+  </h1>-->
+    <div class="container-fluid">
+      <div class="content-wrapper">
+        <div class="item-container">
+          <div class="container">
+            <div class="col-md-12">
+            <div class="col-md-7">
+              <div class="product-title">{{item.name}}</div>
+              <div class="product-desc"></div>
+              <hr>
+              <div class="product-price">{{item.price}}</div>
+              <div *ngIf="item.stock>0" class="product-stock"><span class="dot"></span> {{ item?.stock }} items available</div>
+              <div *ngIf="item.stock==0" class="out-of-stock"><span class="red-dot"></span> out of Stock</div>
+              <hr>
+
+
+            </div>
+          </div>
+        </div>
+
+  </div>
+
+  <br>
+  <app-form   [data]="item" [datacart]="cart" (updateEventcart)="updatecart($event)"
+             ></app-form>
+
+</div>
+
+

@@ -14,7 +14,7 @@ Es werden alle vier CRUD-Funktionalitäten implementiert.*
 >   * [Inhalt](#inhalt)
 >   * [Aufbau und Screenshots](#aufbau-und-screenshots)
 >   * [Schwierigkeiten und Problembehandlung](#schwierigkeiten-und-problembehandlung)
->   * [Technologien](#resources-documentation-and-other-links)
+>   * [Technologien](#technologien)
 
 
 ## Aufbau und Screenshots

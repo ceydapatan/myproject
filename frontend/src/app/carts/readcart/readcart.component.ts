@@ -84,6 +84,10 @@ export class ReadcartComponent implements OnInit {
       this.readOne(this.selectedIdItem);
     }
 
+    this.readAll();
+
+    this.readAllItems();
+
 
   }
 
@@ -101,6 +105,7 @@ export class ReadcartComponent implements OnInit {
       (response: Datacart[]) => {
         console.log(response);
         this.carts = response;
+        this.totalPrice = 0;
         this.carts.forEach(element => this.totalPrice = this.totalPrice + (element.anzahl * (this.items[element.id - 1].price)));
 
 
@@ -251,6 +256,9 @@ export class ReadcartComponent implements OnInit {
   }
 
   plusOne(datacart: Datacart): void{
+
+
+
 
      this.cart = datacart;
      this.cart.anzahl++;

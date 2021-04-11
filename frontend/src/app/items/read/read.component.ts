@@ -55,6 +55,8 @@ export class ReadComponent implements OnInit {
     else {
       console.log('id = ' + this.selectedId);   // nur fuer debug
       this.readOne(this.selectedId);
+      this.readOneCart(this.selectedIdCart);
+
     }
 
     this.selectedIdCart = Number(this.route.snapshot.paramMap.get('id'));

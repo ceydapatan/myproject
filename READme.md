@@ -2,18 +2,18 @@
 
 ## About
 
-* *Bei meiner Web-Applikation handelt es sich um einen Online Shop, in dem Schmuck verkauft wird. Die NutzerInnen haben die Möglichkeit, Artikel zum Warenkorb hinzuzufügen und zu löschen. Anschließend kann der Kauf abgeschlossen werden. Es werden alle vier CRUD-Funktionalitäten implementiert.*
+* *Bei meiner Web-Applikation handelt es sich um einen Online Shop, in dem Schmuck verkauft wird. Die NutzerInnen haben die Möglichkeit, Artikel zum Warenkorb hinzuzufügen und zu löschen. Anschließend kann der Kauf abgeschlossen werden. Außerdem gibt es eine Suchfunktion, mit der man nach bestimmtem Schmuck suchen kann. Zudem ist es möglich, die Artikel im Warenkorb nach dem Preis zu sortieren.
+Es werden alle vier CRUD-Funktionalitäten implementiert.*
+
 
 
 ## Inhalt
 
-Use for instance <https://github.com/ekalinin/github-markdown-toc>:
-
-> * [Title](#title--repository-name)
+> * [Titel](#title--repository-name)
 >   * [About](#about--synopsis)
->   * [Table of contents](#table-of-contents)
+>   * [Inhalt](#table-of-contents)
 >   * [Installation](#installation)
->   * [Aufbau Funtionen](#usage)
+>   * [Aufbau und Funktionsweise](#usage)
 >     * [Screenshots](#screenshots)
 >     * [Features](#features)
 >   * [Code](#code)
@@ -35,6 +35,30 @@ Sample:
 * From the command line: `nuxeoctl mp-install nuxeo-sample`
 
 ## Usage
+
+* About-Us-Seite
+
+![alt text](./screenshots/about-us-page.png)
+
+
+* Shop mit Artikeln
+
+![alt text](./screenshots/shop-items-1.png)
+
+
+* Mit der Maus über einen Artikel fahren
+
+![alt text](./screenshots/shop-items-2-hover.png)
+
+* Einzelansicht eines Artikels
+
+![alt text](./screenshots/einzelansicht-white-butterfly.png)
+
+
+
+
+
+
 
 ### Screenshots
 

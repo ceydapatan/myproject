@@ -7,7 +7,7 @@
       <input style="max-width: 26em;" type="number"pattern="lol" placeholder="How many products would you like to add to your cart?"class="form-control" formControlName="quantityControl"  id="inputQuantity">
       <div style="max-width: 30em; margin-top: 10px" class="alert alert-danger" *ngIf="formError">{{errM}}</div>
 
-      <div style="margin-top:10px; max-width: 30em;"class="alert alert-info" *ngIf="isAlreadyIncluded">Es befindet sich bereits {{cart?.anzahl}} Einheiten des Artikels in ihrem Warenkorb.</div>
+      <div style="margin-top:10px; max-width: 30em;"class="alert alert-info" *ngIf="isAlreadyIncluded">Es befindet sich bereits {{cart.anzahl}} Einheiten des Artikels in ihrem Warenkorb.</div>
     </div>
   </div>
 

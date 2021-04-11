@@ -47,6 +47,7 @@ import {darkTheme} from './theme/dark-theme';
 import {lightTheme} from './theme/light-theme';
 import {RouterModule, Routes} from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { IndexComponent } from './index/index.component';
 
 const icons = {
   pencilSquare,
@@ -82,7 +83,8 @@ export function playerFactory() {
     CreateComponent,
     LoginComponent,
     RegisterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    IndexComponent
   ],
     imports: [
         LottieModule.forRoot({player: playerFactory}),

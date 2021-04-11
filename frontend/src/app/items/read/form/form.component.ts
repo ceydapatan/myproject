@@ -27,7 +27,7 @@ export class FormComponent implements OnInit {
   carts: Datacart[];
   cart: Datacart;
   lengthOfCarts: number;
-  anzahlCart: number;
+  anzahlCart = 9000909;
   idArray = [1,2,3];
 
   @Input() stock = 0 ;
@@ -72,15 +72,26 @@ export class FormComponent implements OnInit {
       quantityControl: this.datacart?.anzahl,
 
     });
-
-
-    this.readAllCarts();
     const fullUrl = document.URL;
     const stuff = fullUrl.split('/');
     const currentId = stuff[stuff.length - 1];
 
+    if (Number(currentId) === 0) {
+      this.readAllCarts();
+    }
+    else {
+
+      this.readOneCart(Number(currentId));
+      this.readAllCarts();
+    }
+
+
+    this.readAllCarts();
+
+
     this.readOneCart(Number(currentId));
     this.readOne(Number(currentId));
+
 
   }
 
@@ -122,8 +133,7 @@ export class FormComponent implements OnInit {
   readOneCart(id: number): void {
     this.cs.getDatacartById(id).subscribe(
       (response: Datacart) => {this.cart = response;
-        this.anzahlCart = this.cart.anzahl;
-        console.log('Ich bin in reaoneCart und das ist' + this.anzahlCart); } ,
+                               this.anzahlCart = this.cart.anzahl; } ,
       error => this.error = error,
     );
   }
@@ -135,7 +145,7 @@ export class FormComponent implements OnInit {
     const stuff = fullUrl.split('/');
     const currentId = stuff[stuff.length - 1];
 
-    if (values.quantityControl / values.quantityControl !== 1)
+    if (values.quantityControl / values.quantityControl !== 1 || values.quantityControl< 0 )
     {
       this.formError = true;
       this.errM = 'Bitte geben Sie eine Zahl ein';
@@ -143,12 +153,15 @@ export class FormComponent implements OnInit {
 
 
 
-    else if (values.quantityControl > this.data.stock)
+    else if (values.quantityControl > this.data.stock - this.datacart.anzahl)
     {
       this.formError = true;
       this.errM = 'Nicht mehr genügend Artikel erhältlich';
 
     }
+
+
+
 
     else {
 
@@ -157,14 +170,31 @@ export class FormComponent implements OnInit {
         this.datacart.anzahl = values.quantityControl;
         this.cs.createcart(this.datacart);
         this.router.navigate(['/readcart']);
-      } else {
-        console.log('Das ist das id-Array ' + this.idArray);
-        const lol = this.form.value;
+      }
+      else {
 
-        this.datacart.id = Number(currentId);
-        console.log('ich bin hier' + this.anzahlCart);
-        this.datacart.anzahl = this.anzahlCart + values.quantityControl;
-        this.updateEventcart.emit(this.datacart);
+        this.cs.getDatacartById(Number(currentId)).subscribe(
+          (response: Datacart) => {this.cart = response;
+            this.anzahlCart = this.cart.anzahl;
+            console.log('Ich bin in reaoneCart und das ist' + this.anzahlCart); } ,
+          error => this.error = error,
+        );
+
+        if ((values.quantityControl > this.data.stock - this.cart.anzahl ))
+        {
+          this.formError = true;
+          this.errM = 'Nicht mehr genügend Artikel erhältlich';
+        }
+
+        else {
+          console.log('Das ist das id-Array ' + this.idArray);
+          const lol = this.form.value;
+
+          this.datacart.id = Number(currentId);
+          console.log('ich bin hier' + this.anzahlCart);
+          this.datacart.anzahl = this.anzahlCart + values.quantityControl;
+          this.updateEventcart.emit(this.datacart);
+        }
       }
     }
   }
@@ -175,6 +205,7 @@ export class FormComponent implements OnInit {
       },
       error => console.log(error)
     );
+
   }
 
 

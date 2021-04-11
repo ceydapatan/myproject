@@ -40,6 +40,11 @@ import {ShippingaddressService} from './shared/shippingaddress.service';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreateComponent } from './items/create/create.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import {ThemeModule} from './theme/theme.module';
+import {darkTheme} from './theme/dark-theme';
+import {lightTheme} from './theme/light-theme';
 
 const icons = {
   pencilSquare,
@@ -70,7 +75,9 @@ export function playerFactory() {
     CheckoutComponent,
     AboutusComponent,
     ContactComponent,
-    CreateComponent
+    CreateComponent,
+    LoginComponent,
+    RegisterComponent
   ],
     imports: [
         LottieModule.forRoot({player: playerFactory}),
@@ -87,7 +94,11 @@ export function playerFactory() {
         NgxBootstrapIconsModule.pick(icons),
         ReactiveFormsModule,
         NgbModule,
-        FormsModule
+        FormsModule,
+      ThemeModule.forRoot({
+        themes: [lightTheme, darkTheme],
+        active: 'light'
+      })
 
     ],
   providers: [ShippingaddressService],

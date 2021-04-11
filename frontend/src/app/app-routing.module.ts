@@ -10,10 +10,17 @@ import {DeletecartComponent} from './carts/deletecart/deletecart.component';
 import {CheckoutComponent} from './carts/readcart/checkout/checkout.component';
 import {AboutusComponent} from './aboutus/aboutus.component';
 import {ContactComponent} from './contact/contact.component';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
 
 
 
 const routes: Routes = [
+
+  //Login & Registrierung
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+
 
   //Info
   { path: 'aboutus', component: AboutusComponent },

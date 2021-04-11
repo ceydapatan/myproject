@@ -31,6 +31,7 @@
             ],
             "scripts": [
               "./node_modules/@lottiefiles/lottie-player/dist/lottie-player.js",
+              ["./node_modules/angular-dark-mode/angular-dark-mode.js"],
 
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"

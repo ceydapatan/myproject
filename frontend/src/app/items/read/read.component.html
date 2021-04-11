@@ -1,3 +1,8 @@
+<!--<header *ngIf="selectedId ==0" class="Banners-module&#45;&#45;bannerHeader__3bFZt" style="background-color: #e9479b; margin-bottom: 5px;"><h3 class="Banners-module&#45;&#45;headline__1UCvl Banners-module&#45;&#45;white___RLsF Banners-module&#45;&#45;default__2f9U- Banners-module&#45;&#45;s-text__2t681">Free Shipping On Orders Over 50$</h3></header>-->
+
+
+
+<header *ngIf="selectedId ==0" class="free-shipping" style="background-color:powderblue">Free Shipping On Orders Over 50$</header>
 
 <div *ngIf="selectedId ==0" class="input-group rounded">
   <input [(ngModel)]="jewelryName" (keyup.enter)="search()" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
@@ -67,13 +72,12 @@
     <div class="col-lg-4 col-md-12 mb-4">
       <a [routerLink]="['/read/', items[0].id]" >
 
-
         <div class="image">
           <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[0].imagePath}}" alt="Chains" style="width:400px; height:500px;">
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">Chains</div>
+            <div class="image__title">{{items[0].name}}</div>
             <p class="image__description">
-              Price: 14.99$
+              {{'Price: ' + items[0].price + '$'}}
             </p>
           </div>
         </div>
@@ -89,9 +93,9 @@
         <div class="image">
           <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[1].imagePath}}" alt="Heart Earrings" style="width:400px; height:350px;" >
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">Heart Earrings</div>
+            <div class="image__title">{{items[1].name}}</div>
             <p class="image__description">
-              Price:12.99$
+              {{'Price: ' + items[1].price + '$'}}
             </p>
           </div>
         </div>
@@ -108,9 +112,9 @@
         <div class="image">
           <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[2].imagePath}}" alt="<Butterfly Rings>" style="width:400px; height:350px;">
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">Butterfly Rings</div>
+            <div class="image__title">{{items[2].name}}</div>
             <p class="image__description">
-              Price: 7.99$
+              {{'Price: ' + items[2].price + '$'}}
             </p>
           </div>
         </div>
@@ -123,9 +127,9 @@
         <div class="image">
           <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[3].imagePath}}" alt="Flower Earrings" style="width:400px; height:500px;">
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">Flower Earrings</div>
+            <div class="image__title">{{items[3].name}}</div>
             <p class="image__description">
-              Price: 12.99$
+              {{'Price: ' + items[3].price + '$'}}
             </p>
           </div>
         </div>
@@ -147,9 +151,9 @@
         <div class="image">
           <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[4].imagePath}}" alt="Blue Butterfly Earrings" style="width:400px; height:500px;">
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">B Butterfly Earrings</div>
+            <div class="image__title">{{items[4].name}}</div>
             <p class="image__description">
-              Price: 12.99$
+              {{'Price: ' + items[4].price + '$'}}
             </p>
           </div>
         </div>
@@ -163,9 +167,9 @@
         <div class="image">
           <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[5].imagePath}}" alt="<White Butterfly Earrings>" style="width:400px; height:350px;">
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">W Butterfly Earrings</div>
+            <div class="image__title">{{items[5].name}}</div>
             <p class="image__description">
-              Price: 12.99$
+              {{'Price: ' + items[5].price + '$'}}
             </p>
           </div>
         </div>
@@ -209,12 +213,12 @@
 
 <p *ngIf="c.length !== 0">{{c.length + ' Treffer'}}</p>
 
-  <div *ngIf="c.length===0" style="max-width: 250px; margin-left: 100px;">
+  <div *ngIf="c.length===0" style="max-width: 250px; margin-left: 35%; margin-top: 10%">
 
 
     <ng-lottie  [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
 
-    <h1>Unfortunately no results were found</h1>
+    <h2>Unfortunately no results were found</h2>
   </div>
 
 
@@ -286,5 +290,4 @@
              ></app-form>
 
 </div>
-
 

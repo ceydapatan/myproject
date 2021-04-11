@@ -22,24 +22,23 @@ export class ReadcartComponent implements OnInit {
   carts: Datacart[];
   cart: Datacart;
   items: Data[];
+  item: Data;
   a: Datacart;
   b: Datacart
   totalPrice = 0;
   shippingCosts = 0;
- address: String;
- country: String;
- postalCode : String;
+  address: String;
+  country: String;
+  postalCode: String;
 
- addressArray: String[];
+  addressArray: String[];
   closeResult = '';
 
   checkedOut: boolean;
 
 
-
   selectedId: number;
   selectedIdItem: number;
-
 
 
   error: HttpErrorResponse;
@@ -48,12 +47,9 @@ export class ReadcartComponent implements OnInit {
   itemname: string;
 
 
-
-
-
   constructor(private cs: BackendService, private route: ActivatedRoute, private router: Router, config: NgbModalConfig,
               private modalService: NgbModal, private fb: FormBuilder,
-              private sas: ShippingaddressService ) {
+              private sas: ShippingaddressService) {
     config.backdrop = 'static';   // schliesst nicht, wenn man in das Fenster dahinter klickt
     config.keyboard = false;      // Modaler Dialog kann nicht durch ESC beendet werden
     // Formular fuer delete
@@ -73,8 +69,7 @@ export class ReadcartComponent implements OnInit {
     if (this.selectedId === 0) {
       this.readAll();
       this.readAllItems();
-    }
-    else {
+    } else {
       console.log('id = ' + this.selectedId);
       this.readOne(this.selectedId);
 
@@ -84,18 +79,17 @@ export class ReadcartComponent implements OnInit {
     if (this.selectedIdItem === 0) {
       this.readAll();
       this.readAllItems();
-    }
-    else {
+    } else {
       console.log('id = ' + this.selectedIdItem);   // nur fuer debug
       this.readOne(this.selectedIdItem);
     }
 
 
-
-
-
   }
-  trackByData(index: number, data: Datacart): number { return data.id; }
+
+  trackByData(index: number, data: Datacart): number {
+    return data.id;
+  }
 
   readAll(): void {
     this.cs.getAllCarts().subscribe(
@@ -105,21 +99,24 @@ export class ReadcartComponent implements OnInit {
         this.carts.forEach(element => this.totalPrice = this.totalPrice + (element.anzahl * (this.items[element.id - 1].price)));
 
 
-        if ( this.carts.length > 0 && this.totalPrice < 50)
-        {
+        if (this.carts.length > 0 && this.totalPrice < 50) {
           this.shippingCosts = 5;
         }
 
         console.log(this.carts.length);
-        return this.carts = response;  },
+        return this.carts = response;
+      },
       error => console.log(error)
     );
   }
 
+
   readAllItems(): void {
     this.cs.getAll().subscribe(
-      (response: Data[]) => {this.items = response;
-        console.log('Das ist das items Array' + this.items); },
+      (response: Data[]) => {
+        this.items = response;
+        console.log('Das ist das items Array' + this.items);
+      },
       error => console.log(error)
     );
   }
@@ -127,19 +124,21 @@ export class ReadcartComponent implements OnInit {
   readOne(id: number): void {
     this.cs.getDatacartById(id).subscribe(
       (response: Datacart) => this.cart = response,
-    error => this.error = error,
-
-  );
-  }
-
-  /*/readOneItem(id: number): void {
-    this.cs.getDatacartById(id).subscribe(
-      (response: Datacart) => this.cart = response,
       error => this.error = error,
-
     );
   }
-  /*/
+
+
+  /*readOneItem(id: number): void {
+    this.cs.getDataById(id).subscribe(
+      (response: Data) => {
+        this.item = response;
+        console.log('Das ist der imagePath' + this.item.imagePath);
+      },
+      error => console.log(error)
+    );
+  }*/
+
 
 
 
@@ -160,8 +159,7 @@ export class ReadcartComponent implements OnInit {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
       console.log(this.closeResult);
-      if (result === 'delete')
-      {
+      if (result === 'delete') {
         this.deleteOne(this.cart?.id);
       }
     });
@@ -176,56 +174,52 @@ export class ReadcartComponent implements OnInit {
     });
   }
 
-  sort(): void{
+  sort(): void {
     this.cs.getAllCarts().subscribe(
       (response: Datacart[]) => {
         console.log(response);
         this.carts = response;
-        for (let i = 0 ; i < this.carts.length ; i ++)
-        {
-          for (let j = 0; j < this.carts.length - 1 ; j++)
-          {
+        for (let i = 0; i < this.carts.length; i++) {
+          for (let j = 0; j < this.carts.length - 1; j++) {
             const k = j + 1;
 
             this.a = this.carts[j];
             this.b = this.carts[k];
 
-            if ( this.items[this.b.id - 1].price < this.items[this.a.id - 1].price)
-            {
+            if ((this.items[this.b.id - 1].price * this.b.anzahl) < (this.items[this.a.id - 1].price * this.a.anzahl)) {
 
               this.carts[j] = this.b;
               this.carts[k] = this.a;
             }
           }
         }
-       },
+      },
       error => console.log(error)
     );
 
 
-   /* this.cs.getAllCarts().subscribe(
-      (response: Datacart[]) => {
-        console.log(response);
-        this.carts = response;
-        const sortedCarts: { price: number; }[] = this.carts.sort((n1,n2) => {
-          if (n1.price > n2.age) {
-            return 1;
-          }
+    /* this.cs.getAllCarts().subscribe(
+       (response: Datacart[]) => {
+         console.log(response);
+         this.carts = response;
+         const sortedCarts: { price: number; }[] = this.carts.sort((n1,n2) => {
+           if (n1.price > n2.age) {
+             return 1;
+           }
 
-          if (n1.age < n2.age) {
-            return -1;
-          }
+           if (n1.age < n2.age) {
+             return -1;
+           }
 
-          return 0;
-        });},
-      error => console.log(error)
-    );
-*/
+           return 0;
+         });},
+       error => console.log(error)
+     );
+ */
   }
 
 
-
-  checkOut(): void{
+  checkOut(): void {
     // alle Items im Warenkorb löschen und den Stock verringern
 
     this.cs.deleteAll();
@@ -242,11 +236,6 @@ export class ReadcartComponent implements OnInit {
     //window.location.reload();
 
 
-
-
-
-
-
     this.sas.addcustomerAddress(this.country);
     this.sas.addcustomerAddress(this.address);
     this.sas.addcustomerAddress(this.postalCode);
@@ -254,13 +243,30 @@ export class ReadcartComponent implements OnInit {
     this.router.navigateByUrl('/readcart/checkout');
 
 
-
-
-
-
-
-
-
   }
+
+  plusOne(datacart: Datacart): void{
+
+     this.cart = datacart;
+     this.cart.anzahl++;
+     this.cs.updatecart(this.cart.id, this.cart);
+     this.cs.getDataById(this.cart.id).subscribe(
+         (response: Data) => {this.item = response;
+                             },
+         error => console.log(error)
+       );
+
+     window.location.reload();
+ }
+
+   minusOne(datacart: Datacart): void{
+
+     this.cart = datacart;
+     this.cart.anzahl--;
+     this.cs.updatecart(this.cart.id, this.cart);
+     window.location.reload();
+   }
+
+
 
 }

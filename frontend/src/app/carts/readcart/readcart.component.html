@@ -45,7 +45,7 @@
               <div class="price ml-2"><span class="mr-1">price</span><i class="fa fa-angle-down"></i></div>
             </div>
           </div>
-          <div *ngFor="let cart of carts; let i=index; trackBy: trackByData" class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
+          <div *ngFor="let cart of carts;let i=index; trackBy: trackByData" class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
             <div class="d-flex flex-row"><img class="rounded" src="{{items[cart.id-1].imagePath}}" width="40" height="40">
               <div class="ml-2"><span class="font-weight-bold d-block">{{items[cart.id-1].name}}</span><i-bs
                 name="trash"
@@ -53,12 +53,23 @@
                 width="1em"
                 height="1em"
                 (click)="open(content, cart.id)">
+
               </i-bs></div>
             </div>
-            <div class="d-flex flex-row align-items-center"><span class="d-block">{{cart.anzahl}}</span><span class="d-block ml-5 font-weight-bold">{{items[cart.id-1].price}}</span><i class="fa fa-trash-o ml-3 text-black-50"></i></div>
+
+            <div class="d-flex flex-row align-items-center">
+
+            <button [disabled]="cart.anzahl === 1"(click)="minusOne(cart)">-</button>
+              <span class="d-block">{{cart.anzahl}}</span>
+              <button [disabled]="items[i].stock<=cart.anzahl" (click)="plusOne(cart)">+</button>
+
+              <!--              <button [disabled]="item.stock<=cart.anzahl" (click)="plusOne(cart)">+</button>-->
+              <span class="d-block ml-5 font-weight-bold">{{items[cart.id-1].price * cart.anzahl}}</span>
+              <i class="fa fa-trash-o ml-3 text-black-50"></i></div>
 
         </div>
         </div>
+
 
       </div>
       <div class="col-md-4">

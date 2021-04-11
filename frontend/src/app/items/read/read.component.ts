@@ -6,6 +6,9 @@ import {Datacart} from '../../shared/datacart';
 import {HttpErrorResponse} from '@angular/common/http';
 import {AnimationOptions} from 'ngx-lottie';
 import {AnimationItem} from 'lottie-web';
+import {DarkModeService} from 'angular-dark-mode';
+import {Observable} from 'rxjs';
+import {ThemeService} from '../../theme/theme.service';
 
 
 
@@ -16,9 +19,12 @@ import {AnimationItem} from 'lottie-web';
   styleUrls: ['./read.component.css']
 })
 export class ReadComponent implements OnInit {
+  darkMode$: Observable<boolean> = this.darkModeService.darkMode$;
 
 
-  constructor(private cs: BackendService,   private router: Router, private route: ActivatedRoute) { }
+  constructor(private cs: BackendService,   private router: Router, private route: ActivatedRoute,
+              private darkModeService: DarkModeService,
+              ) { }
 
 
   items: Data[];
@@ -156,4 +162,7 @@ search(): void {
 
 
   }
+
+
+
 }

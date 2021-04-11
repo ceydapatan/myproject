@@ -81,7 +81,7 @@ Die  Artikel im Warenkorb können außerdem nach den Preisen sortiert werden.
 * Wenn UserInnen einen Artikel erneut besichtigen, nachdem sie ihn zum Warenkorb hinzugefügt haben, werden sie darüber informiert.
 
 
-![alt text](./screenshots/chains-einzelansicht-2.png)
+![alt text](./screenshots/chains.png)
 
 ### Kaufabschluss
 
@@ -98,7 +98,7 @@ Anschließend wird man zu einer anderen Seite weitergeleitet, auf der man darüb
   
 * Artikel 'Chains' vor Kaufabschluss
 
-![alt text](./screenshots/chains-vorher.png)
+![alt text](./screenshots/chains.png)
 
 * Artikel 'Chains' nach Kaufabschluss
 
@@ -119,7 +119,7 @@ Problembehandlung bei der Eingabe eines Buchstabens
 Problembehandlung: nicht genügend Artikel verfügbar
 ![alt text](./screenshots/nicht-genügend-Artikel-1.png)
 
-![alt text](./screenshots/nicht-genügend-artikel-erhältlich-2.png)
+![alt text](./screenshots/butterfly-rings.png)
 
 Problembehandlung Warenkorb: Button disabled, wenn nicht genügend Artikel verfügbar sind
 ![alt text](./screenshots/button-disabled.png)

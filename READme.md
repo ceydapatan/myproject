@@ -9,14 +9,14 @@ Es werden alle vier CRUD-Funktionalitäten implementiert.*
 
 ## Inhalt
 
-> * [Titel](#title--repository-name)
+> * [Titel](#My-Online-Shop)
 >   * [About](#about--synopsis)
->   * [Inhalt](#table-of-contents)
+>   * [Inhalt](#inhalt)
 >   * [Installation](#installation)
->   * [Aufbau und Funktionsweise](#usage)
+>   * [Aufbau und Screenshots](#usage)
 >     * [Screenshots](#screenshots)
 >     * [Features](#features)
->   * [Code](#code)
+>   * [Schwierigkeiten und Problembehandlung](#code)
 >     * [Content](#content)
 >     * [Requirements](#requirements)
 >     * [Limitations](#limitations)
@@ -68,6 +68,38 @@ Der zu zahlende Betrag wird aus den Preisen der im Warenkorb befindlichen Artike
 
 ![alt text](./screenshots/cart-without-shipping.png)
 
+Einzelansicht eines Artikels nachdem er zum Warenkorb hinzugefügt wurde:
+
+* Wenn UserInnen einen Artikel erneut besichtigen, nachdem sie ihn zum Warenkorb hinzugefügt haben, werden sie darüber informiert.
+
+
+![alt text](./screenshots/chains-einzelansicht.png)
+
+Kaufabschluss
+
+* Der Kauf wird abgeschlossen, indem der 'Checkout'-Button betätigt wird und das darüberliegende Formular ausgefüllt wird.
+Anschließend wird man zu einer anderen Seite weitergeleitet, auf der man darüber benachrichtigt wird, dass der Kauf erfolgreich abgeschlossen wurde. Darüber hinaus wird die Adresse angezeigt, an die die Bestellung geliefert werden soll.
+  
+![alt text](./screenshots/checkout-form.png)
+
+![alt text](./screenshots/checkout.png)
+
+Nach Kaufabschluss
+
+* Nach Kaufabschluss wird die verfügbare Menge der entsprechenden Artikel aktualisiert.
+  
+Artikel 'Chains' vor Kaufabschluss
+![alt text](./screenshots/chains-vorher.png)
+
+Artikel 'Chains' nach Kaufabschluss
+![alt text](./screenshots/chains-nachher.png)
+
+
+
+
+
+
+
 
 
 
@@ -78,15 +110,28 @@ Der zu zahlende Betrag wird aus den Preisen der im Warenkorb befindlichen Artike
 
 ### Features
 
-## Code
+## Schwierigkeiten und Problembehandlung
 
-[![Build Status](https://qa.nuxeo.org/jenkins/buildStatus/icon?job=/nuxeo/addons_nuxeo-sample-project-master)](https://qa.nuxeo.org/jenkins/job/nuxeo/job/addons_nuxeo-sample-project-master/)
+In meinem Projekt mussten zahlreiche Einzelheiten und Schwierigkeiten beachtet werden.
+Ich habe mit zwei Datenbanken gearbeitet, dessen Datensätze voneinander abhängig waren.
+So muss man beispielsweise, wenn man die Menge eines Artikels im Warenkorb erhöhen möchte, auch die Datenbank der im Shop erhältlichen Artikel im Hinterkopf behalten und prüfen, 
+ob überhaupt genügend Artikel erhältlich sind. Wenn dies nicht der Fall ist, muss man auf das Problem entsprechend reagieren. Außerdem kann der 'Add To Cart'-Button bei der Einzelansicht eines Artikels von den UserInnen sowohl als 'Create'-,  als auch als 'Update'-Funktionalität genutzt werden. Auch Dinge wie diese musste ich bei der Entwicklung meiner Web-Applikation beachten.
 
-### Content
+Problembehandlung bei der Eingabe eines Buchstabens
+![alt text](./screenshots/eingabe-buchstabe.png)
 
-Description, sub-modules organization...
+Problembehandlung: nicht genügend Artikel verfügbar
+![alt text](./screenshots/nicht-genügend-Artikel-1.png)
 
-### Requirements
+![alt text](./screenshots/nicht-genügend-Artikel-erhältlich-2.png)
+
+Problembehandlung Warenkorb: Button disabled, wenn nicht genügend Artikel verfügbar sind
+![alt text](./screenshots/button-disabled.png)
+
+
+
+
+
 
 See [CORG/Compiling Nuxeo from sources](http://doc.nuxeo.com/x/xION)
 

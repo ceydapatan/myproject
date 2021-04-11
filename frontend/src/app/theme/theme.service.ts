@@ -12,6 +12,7 @@ export class ThemeService {
   ) {
   }
 
+  // tslint:disable-next-line:typedef
   getActiveTheme() {
     const theme = this.themes.find(t => t.name === this.theme);
     if (!theme) {
@@ -20,6 +21,7 @@ export class ThemeService {
     return theme;
   }
 
+  // tslint:disable-next-line:typedef
   setTheme(name: string) {
     this.theme = name;
     this.themeChange.emit( this.getActiveTheme());

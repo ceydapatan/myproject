@@ -139,15 +139,6 @@ export class ReadcartComponent implements OnInit {
   }
 
 
-  /*readOneItem(id: number): void {
-    this.cs.getDataById(id).subscribe(
-      (response: Data) => {
-        this.item = response;
-        console.log('Das ist der imagePath' + this.item.imagePath);
-      },
-      error => console.log(error)
-    );
-  }*/
 
 
 
@@ -208,24 +199,6 @@ export class ReadcartComponent implements OnInit {
     );
 
 
-    /* this.cs.getAllCarts().subscribe(
-       (response: Datacart[]) => {
-         console.log(response);
-         this.carts = response;
-         const sortedCarts: { price: number; }[] = this.carts.sort((n1,n2) => {
-           if (n1.price > n2.age) {
-             return 1;
-           }
-
-           if (n1.age < n2.age) {
-             return -1;
-           }
-
-           return 0;
-         });},
-       error => console.log(error)
-     );
- */
   }
 
 
@@ -242,8 +215,6 @@ export class ReadcartComponent implements OnInit {
     // alle Items im Warenkorb werden gelöscht
 
     this.cs.deleteAll();
-
-    //window.location.reload();
 
 
     this.sas.addcustomerAddress(this.country);

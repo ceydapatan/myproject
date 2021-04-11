@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Theme } from './symbols';
 
 @Directive({
+  // tslint:disable-next-line:directive-selector
   selector: '[app-theme]'
 })
 export class ThemeDirective implements OnInit {

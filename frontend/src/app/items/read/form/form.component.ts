@@ -212,31 +212,4 @@ export class FormComponent implements OnInit {
 
 
 
-
-
-  /* onSubmit(): void {
-     this.formError = false;
-     const values = this.form.value;
-     this.valuesl = values.quantityControl;
-     this.data.id = this.data.id;
-     this.data.name = this.data.name;
-     this.data.price = this.data.price;
-     if (values.quantityControl / values.quantityControl !== 1)
-     {
-       this.formError = true;
-       this.errM = 'Bitte geben Sie eine Zahl ein';
-     }   //prüfen ob eine Zahl eingegeben wurde
-     else if(values.quantityControl > this.data.stock)
-     {
-        this.formError = true;
-        this.errM = 'Nicht mehr genügend Artikel erhältlich';
-     }
-     //zu wenig Artikel
-     else
-     {
-       this.data.stock = this.data.stock - values.quantityControl;
-       this.updateEvent.emit(this.data);
-     }
-   }*/
-
 }

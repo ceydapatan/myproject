@@ -127,6 +127,9 @@ Problembehandlung Warenkorb: Button disabled, wenn nicht gen√ºgend Artikel verf√
 Problembehandlung: Suche ergab keine Treffer
 ![alt text](./screenshots/search-no-results.png)
 
+404: Page Not Found
+![alt text](./screenshots/404_error.png)
+
 
 
 ## Technologien

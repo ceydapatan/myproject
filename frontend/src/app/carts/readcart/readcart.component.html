@@ -1,38 +1,4 @@
 <div *ngIf="selectedId == 0" class="container">
-
-<!--<table class="table table-striped table-hover">
-  <caption>List of Carts</caption>
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Anzahl</th>
-    <th>Bearbeiten</th>
-    <th>Löschen</th>
-
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let cart of carts; let i=index; trackBy: trackByData">
-    <td>{{cart.id}}</td>
-    <td>{{cart.anzahl}}</td>
-    <td><a [routerLink]="['/readcart/', cart.id]">
-      <i-bs
-        name="pencil-square"
-        class="text-secondary"
-        width="1em"
-        height="1em">
-      </i-bs></a></td>
-    <td><i-bs
-      name="trash"
-      class="text-secondary"
-      width="1em"
-      height="1em"
-      (click)="open(content, cart.id)">
-    </i-bs></td>
-  </tr>
-  </tbody>
-</table>-->
-
   <div class="container mt-5 p-3 rounded cart">
     <div class="row no-gutters">
       <div class="col-md-8">
@@ -63,7 +29,6 @@
               <span class="d-block">{{cart.anzahl}}</span>
               <button style="margin-left: 0.8em;" [disabled]="items[cart.id-1].stock<=cart.anzahl" (click)="plusOne(cart)" class="btn btn-outline-dark change-amount" >+</button>
 
-              <!--              <button [disabled]="item.stock<=cart.anzahl" (click)="plusOne(cart)">+</button>-->
               <span class="d-block ml-5 font-weight-bold">{{roundNumber((( items[cart.id-1].price * cart.anzahl)*100)/100)}}</span>
               <i class="fa fa-trash-o ml-3 text-black-50"></i></div>
 
@@ -115,11 +80,6 @@
 
 
 </div>
-
-
-<!-- modaler Dialog fuer das Loeschen -->
-
-
 
 <ng-template #content let-modal>
   <div class="modal-header">

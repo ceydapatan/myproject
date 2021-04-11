@@ -86,28 +86,28 @@ export function playerFactory() {
     PageNotFoundComponent,
     IndexComponent
   ],
-    imports: [
-        LottieModule.forRoot({player: playerFactory}),
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        LayoutModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatSidenavModule,
-        MatIconModule,
-        MatListModule,
-        HttpClientModule,
-        NgxBootstrapIconsModule.pick(icons),
-        ReactiveFormsModule,
-        NgbModule,
-        FormsModule,
-      ThemeModule.forRoot({
-        themes: [lightTheme, darkTheme],
-        active: 'light'
-      })
+  imports: [
+    LottieModule.forRoot({player: playerFactory}),
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    HttpClientModule,
+    NgxBootstrapIconsModule.pick(icons),
+    ReactiveFormsModule,
+    NgbModule,
+    FormsModule,
+    ThemeModule.forRoot({
+      themes: [lightTheme, darkTheme],
+      active: 'light'
+    })
 
-    ],
+  ],
   providers: [ShippingaddressService],
   bootstrap: [AppComponent]
 })

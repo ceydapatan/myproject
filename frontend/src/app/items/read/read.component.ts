@@ -8,7 +8,6 @@ import {AnimationOptions} from 'ngx-lottie';
 import {AnimationItem} from 'lottie-web';
 import {DarkModeService} from 'angular-dark-mode';
 import {Observable} from 'rxjs';
-import {ThemeService} from '../../theme/theme.service';
 
 
 
@@ -124,7 +123,7 @@ export class ReadComponent implements OnInit {
 
 search(): void {
     this.searchNotActivated = false;
-  this.cs.getAll().subscribe(
+    this.cs.getAll().subscribe(
     (response: Data[]) => {this.items = response;
                            this.c = this.items;
                            this.c = [];
@@ -144,23 +143,6 @@ search(): void {
 
 
 
-
-/*
-
-  console.log('You are in search');
-  this.c = [];
-  let i;
-  for (i = 0 ; i < this.length; i++){
-      this.i = i;
-      if (this.dataName.name.includes(this.jewelryName))
-      {
-        this.c.push(this.dataName);
-      }
-    }
-  this.items = this.c;
-
-  console.log('this is the items array: ' + this.c);
-*/
 
 
   }

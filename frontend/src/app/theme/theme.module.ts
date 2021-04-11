@@ -12,7 +12,7 @@ import { THEMES, ACTIVE_THEME, ThemeOptions } from './symbols';
   exports: [ThemeDirective]
 })
 export class ThemeModule {
-  static forRoot(options: ThemeOptions): ModuleWithProviders {
+  static forRoot(options: ThemeOptions): ModuleWithProviders<any> {
     return {
       ngModule: ThemeModule,
       providers: [

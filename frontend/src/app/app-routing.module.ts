@@ -13,6 +13,7 @@ import {ContactComponent} from './contact/contact.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {NavComponent} from './nav/nav.component';
 import {IndexComponent} from './index/index.component';
 
 
@@ -31,7 +32,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
 
 
-  { path: '', component: IndexComponent },
+  { path: '', component: AboutusComponent },
 
 
   // routes für die items

@@ -1,26 +1,19 @@
-# Title / Repository Name
+# My Online Shop
 
-## About / Synopsis
+## About
 
-* What is it, what does it do / Abstract
-* Project status: working/prototype
-* Nuxeo Support
+* *Bei meiner Web-Applikation handelt es sich um einen Online Shop, in dem Schmuck verkauft wird. Die NutzerInnen haben die Möglichkeit, Artikel zum Warenkorb hinzuzufügen und zu löschen. Anschließend kann der Kauf abgeschlossen werden. Es werden alle vier CRUD-Funktionalitäten implementiert.*
 
-See real examples:
 
-* <https://github.com/nuxeo/nuxeo/blob/master/README.md>
-* <https://github.com/nuxeo/nuxeo-drive/blob/master/README.md>
-* <https://github.com/nuxeo/nuxeo-sdk-ios/blob/master/README.md>
-
-## Table of contents
+## Inhalt
 
 Use for instance <https://github.com/ekalinin/github-markdown-toc>:
 
-> * [Title / Repository Name](#title--repository-name)
->   * [About / Synopsis](#about--synopsis)
+> * [Title](#title--repository-name)
+>   * [About](#about--synopsis)
 >   * [Table of contents](#table-of-contents)
 >   * [Installation](#installation)
->   * [Usage](#usage)
+>   * [Aufbau Funtionen](#usage)
 >     * [Screenshots](#screenshots)
 >     * [Features](#features)
 >   * [Code](#code)
@@ -103,3 +96,13 @@ The source code, documentation, roadmap, issue tracker, testing, benchmarks are 
 Typically, Nuxeo users build different types of information management solutions for [document management](https://www.nuxeo.com/solutions/document-management/), [case management](https://www.nuxeo.com/solutions/case-management/), and [digital asset management](https://www.nuxeo.com/solutions/dam-digital-asset-management/), use cases. It uses schema-flexible metadata & content models that allows content to be repurposed to fulfill future use cases.
 
 More information is available at [www.nuxeo.com](https://www.nuxeo.com).
+
+#My Online Shop
+
+*Bei meiner Web-Applikation handelt es sich um einen Online Shop, in dem Schmuck verkauft wird. Die NutzerInnen haben die Möglichkeit, Artikel zum Warenkorb hinzuzufügen und zu löschen. Anschließend kann der Kauf abgeschlossen werden. Es werden alle vier CRUD-Funktionalitäten implementiert.*
+
+##Inhalt
+1. Aufbau und Funktionsweise
+1. Technologien
+1. Leg jetzt los!
+

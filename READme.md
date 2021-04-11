@@ -112,6 +112,8 @@ In meinem Projekt mussten zahlreiche Einzelheiten und Schwierigkeiten beachtet w
 Ich habe mit zwei Datenbanken (Items im Shop und Warenkorb) gearbeitet, deren Datenfelder voneinander abhängig waren.
 So muss man beispielsweise, wenn man die Menge eines Artikels im Warenkorb erhöhen möchte, auch die Datenbank der im Shop erhältlichen Artikel im Hinterkopf behalten und prüfen, 
 ob überhaupt genügend Artikel erhältlich sind. Wenn dies nicht der Fall ist, muss man auf das Problem entsprechend reagieren. Außerdem kann der 'Add To Cart'-Button bei der Einzelansicht eines Artikels von den UserInnen sowohl als 'Create'-,  als auch als 'Update'-Funktionalität genutzt werden. Auch Dinge wie diese musste ich bei der Entwicklung meiner Web-Applikation beachten.
+Darüber hinaus war es mir auch wichtig, auf Eingaben der UserInnen angemessen zu reagieren. 
+
 
 Problembehandlung bei der Eingabe eines Buchstabens
 ![alt text](./screenshots/eingabe-buchstabe.png)

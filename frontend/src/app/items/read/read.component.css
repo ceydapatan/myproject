@@ -80,8 +80,8 @@
 {
 
 
-  margin-left:200px;
-  margin-top:30px;
+  margin-left:35%;
+  margin-top:3%;
 }
 
 .dot {
@@ -142,6 +142,7 @@
 
 .product-price{
   font-size: 22px;
+
 }
 
 .product-stock{

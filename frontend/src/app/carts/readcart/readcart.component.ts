@@ -40,7 +40,6 @@ export class ReadcartComponent implements OnInit {
   selectedId: number;
   selectedIdItem: number;
 
-
   error: HttpErrorResponse;
   form: FormGroup;
 
@@ -73,6 +72,7 @@ export class ReadcartComponent implements OnInit {
       console.log('id = ' + this.selectedId);
       this.readOne(this.selectedId);
 
+
     }
 
     this.selectedIdItem = Number(this.route.snapshot.paramMap.get('id'));
@@ -89,6 +89,11 @@ export class ReadcartComponent implements OnInit {
 
   trackByData(index: number, data: Datacart): number {
     return data.id;
+  }
+
+  roundNumber(num): number{
+    return Math.round(num * 100) / 100;
+
   }
 
   readAll(): void {

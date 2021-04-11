@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AnimationOptions} from 'ngx-lottie';
+import {AnimationItem} from 'lottie-web';
 
 @Component({
   selector: 'app-contact',
@@ -6,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  options: AnimationOptions = {
+    path: '/assets/contact.json',
+  };
+
+  animationCreated(animationItem: AnimationItem): void {
+    console.log(animationItem);
+  }
 
   constructor() { }
 

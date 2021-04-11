@@ -11,8 +11,8 @@
     <i-bs (click)="search()"
       name="search"
       class="text-primary"
-      width="2rem"
-      height="2rem">
+      width="1.5rem"
+      height="1.5rem">
 </i-bs>
   </span>
 </div>
@@ -70,14 +70,14 @@
 
     <!--Grid column-->
     <div class="col-lg-4 col-md-12 mb-4">
-      <a [routerLink]="['/read/', items[0].id]" >
+      <a [routerLink]="['/read/', items[0]?.id]" >
 
         <div class="image">
-          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[0].imagePath}}" alt="Chains" style="width:400px; height:500px;">
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[0]?.imagePath}}" alt="Chains" style="width:400px; height:500px;">
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">{{items[0].name}}</div>
+            <div class="image__title">{{items[0]?.name}}</div>
             <p class="image__description">
-              {{'Price: ' + items[0].price + '$'}}
+              {{'Price: ' + items[0]?.price + '$'}}
             </p>
           </div>
         </div>
@@ -87,15 +87,15 @@
       </a>
 
 
-      <a [routerLink]="['/read/', items[1].id]">
+      <a [routerLink]="['/read/', items[1]?.id]">
 
 
         <div class="image">
-          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[1].imagePath}}" alt="Heart Earrings" style="width:400px; height:350px;" >
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[1]?.imagePath}}" alt="Heart Earrings" style="width:400px; height:350px;" >
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">{{items[1].name}}</div>
+            <div class="image__title">{{items[1]?.name}}</div>
             <p class="image__description">
-              {{'Price: ' + items[1].price + '$'}}
+              {{'Price: ' + items[1]?.price + '$'}}
             </p>
           </div>
         </div>
@@ -107,29 +107,29 @@
 
     <div class="col-lg-4 col-md-6 mb-4">
 
-      <a [routerLink]="['/read/', items[2].id]">
+      <a [routerLink]="['/read/', items[2]?.id]">
 
         <div class="image">
           <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[2].imagePath}}" alt="<Butterfly Rings>" style="width:400px; height:350px;">
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">{{items[2].name}}</div>
+            <div class="image__title">{{items[2]?.name}}</div>
             <p class="image__description">
-              {{'Price: ' + items[2].price + '$'}}
+              {{'Price: ' + items[2]?.price + '$'}}
             </p>
           </div>
         </div>
 
 
       </a>
-      <a [routerLink]="['/read/', items[3].id]">
+      <a [routerLink]="['/read/', items[3]?.id]">
 
 
         <div class="image">
           <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[3].imagePath}}" alt="Flower Earrings" style="width:400px; height:500px;">
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">{{items[3].name}}</div>
+            <div class="image__title">{{items[3]?.name}}</div>
             <p class="image__description">
-              {{'Price: ' + items[3].price + '$'}}
+              {{'Price: ' + items[3]?.price + '$'}}
             </p>
           </div>
         </div>
@@ -145,15 +145,15 @@
     <!--Grid column-->
     <div class="col-lg-4 col-md-6 mb-4">
 
-      <a [routerLink]="['/read/', items[4].id]">
+      <a [routerLink]="['/read/', items[4]?.id]">
 
 
         <div class="image">
-          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[4].imagePath}}" alt="Blue Butterfly Earrings" style="width:400px; height:500px;">
+          <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[4]?.imagePath}}" alt="Blue Butterfly Earrings" style="width:400px; height:500px;">
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">{{items[4].name}}</div>
+            <div class="image__title">{{items[4]?.name}}</div>
             <p class="image__description">
-              {{'Price: ' + items[4].price + '$'}}
+              {{'Price: ' + items[4]?.price + '$'}}
             </p>
           </div>
         </div>
@@ -162,14 +162,14 @@
 
       </a>
 
-      <a [routerLink]="['/read/', items[5].id]">
+      <a [routerLink]="['/read/', items[5]?.id]">
 
         <div class="image">
           <img class="image__img img-fluid mb-4 rounded-corners" src="{{items[5].imagePath}}" alt="<White Butterfly Earrings>" style="width:400px; height:350px;">
           <div class="image__overlay image__overlay--primary">
-            <div class="image__title">{{items[5].name}}</div>
+            <div class="image__title">{{items[5]?.name}}</div>
             <p class="image__description">
-              {{'Price: ' + items[5].price + '$'}}
+              {{'Price: ' + items[5]?.price + '$'}}
             </p>
           </div>
         </div>
@@ -211,21 +211,24 @@
     </div>
 -->
 
-<p *ngIf="c.length !== 0">{{c.length + ' Treffer'}}</p>
+
+<h3 style="font-family: 'Hiragino Kaku Gothic Pro'; margin: 0.8rem;" *ngIf="c.length !== 0">{{c.length + ' Treffer'}}</h3>
 
   <div *ngIf="c.length===0" style="max-width: 250px; margin-left: 35%; margin-top: 10%">
 
 
     <ng-lottie  [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
 
-    <h2>Unfortunately no results were found</h2>
+    <h2 style="font-family: 'Hiragino Kaku Gothic Pro'">Unfortunately no results were found</h2>
   </div>
 
 
 
-
+<div class="row">
   <div *ngFor="let element of c; let i=index; ">
 
+
+    <div class="col-lg-30 col-md-50 mb-30" style="margin: 0.5em;">
     <div >
       <a [routerLink]="['/read/', element.id]">
 
@@ -245,6 +248,8 @@
 
     </div>
   </div>
+  </div>
+</div>
 <!--  </div>-->
 
 </ng-template>
@@ -259,7 +264,7 @@
   <img id="item-display" class="item-img rounded-corners float-left" src="{{'../../..' + item?.imagePath}}" style="max-height: 370px">
 
 
-  <div class="info-about-item">
+  <div  class="info-about-item">
  <!-- <h1>{{ item?.name }}</h1>
   <h1>Only {{ item?.price }} $ </h1>
   <h1>{{ item?.stock }} products available<span class="dot"></span>
@@ -270,10 +275,11 @@
           <div class="container">
             <div class="col-md-12">
             <div class="col-md-7">
-              <div class="product-title">{{item.name}}</div>
+              <div  class="product-title">{{item?.name}}</div>
               <div class="product-desc"></div>
               <hr>
-              <div class="product-price">{{item.price}}</div>
+              <div class="product-price">{{item?.price}}</div>
+              <hr>
               <div *ngIf="item.stock>0" class="product-stock"><span class="dot"></span> {{ item?.stock }} items available</div>
               <div *ngIf="item.stock==0" class="out-of-stock"><span class="red-dot"></span> out of Stock</div>
               <hr>

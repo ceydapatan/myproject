@@ -55,9 +55,9 @@ export class FormComponent implements OnInit {
               private router: Router
 
   ) {
-        this.formError = false;
+    this.formError = false;
 
-        this.form = this.fb.group(
+    this.form = this.fb.group(
       {
         quantityControl: ['', Validators.required,  Validators.pattern('^[0-9]*$'),
         ],
@@ -122,8 +122,8 @@ export class FormComponent implements OnInit {
   readOneCart(id: number): void {
     this.cs.getDatacartById(id).subscribe(
       (response: Datacart) => {this.cart = response;
-                               this.anzahlCart = this.cart.anzahl;
-                               console.log('Ich bin in reaoneCart und das ist' + this.anzahlCart); } ,
+        this.anzahlCart = this.cart.anzahl;
+        console.log('Ich bin in reaoneCart und das ist' + this.anzahlCart); } ,
       error => this.error = error,
     );
   }
@@ -172,7 +172,7 @@ export class FormComponent implements OnInit {
   readOne(id: number): void {
     this.cs.getDataById(id).subscribe(
       (response: Data) => {this.data = response;
-        },
+      },
       error => console.log(error)
     );
   }
@@ -185,58 +185,27 @@ export class FormComponent implements OnInit {
 
   /* onSubmit(): void {
      this.formError = false;
-
-
-
-
-
      const values = this.form.value;
      this.valuesl = values.quantityControl;
-
      this.data.id = this.data.id;
      this.data.name = this.data.name;
      this.data.price = this.data.price;
-
-
-
-
-
-
-
-
      if (values.quantityControl / values.quantityControl !== 1)
      {
        this.formError = true;
        this.errM = 'Bitte geben Sie eine Zahl ein';
-
      }   //prüfen ob eine Zahl eingegeben wurde
-
-
-
-
      else if(values.quantityControl > this.data.stock)
      {
         this.formError = true;
         this.errM = 'Nicht mehr genügend Artikel erhältlich';
-
      }
      //zu wenig Artikel
-
-
-
-
-
-
-
      else
      {
        this.data.stock = this.data.stock - values.quantityControl;
        this.updateEvent.emit(this.data);
      }
-
-
-
-
    }*/
 
 }

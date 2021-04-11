@@ -12,6 +12,8 @@ import {AboutusComponent} from './aboutus/aboutus.component';
 import {ContactComponent} from './contact/contact.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+
 
 
 
@@ -20,6 +22,7 @@ const routes: Routes = [
   //Login & Registrierung
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+
 
 
   //Info
@@ -48,8 +51,15 @@ const routes: Routes = [
   { path: 'deletecart', component: DeletecartComponent },
   { path: 'deletecart/:id', component: DeletecartComponent },
 
+  { path: '**', component: PageNotFoundComponent },
+
+
+
+
 
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -4,10 +4,10 @@
   <div style="margin-top: 50px; margin-left:10px;" class="form-group row">
     <label for="inputQuantity" class="col-sm-2 col-form-label">Add To Cart </label>
     <div class="col-sm-10">
-      <input style="max-width: 300px;" type="number"pattern="lol" placeholder="How many products would you like to add to your cart?"class="form-control" formControlName="quantityControl"  id="inputQuantity">
-      <div class="alert alert-danger" *ngIf="formError">{{errM}}</div>
+      <input style="max-width: 26em;" type="number"pattern="lol" placeholder="How many products would you like to add to your cart?"class="form-control" formControlName="quantityControl"  id="inputQuantity">
+      <div style="max-width: 30em; margin-top: 10px" class="alert alert-danger" *ngIf="formError">{{errM}}</div>
 
-      <div style="margin-top:10px;"class="alert alert-info" *ngIf="isAlreadyIncluded">Es befindet sich bereits {{this.cart.anzahl}} Einheiten des Artikels in ihrem Warenkorb.</div>
+      <div style="margin-top:10px; max-width: 30em;"class="alert alert-info" *ngIf="isAlreadyIncluded">Es befindet sich bereits {{cart?.anzahl}} Einheiten des Artikels in ihrem Warenkorb.</div>
     </div>
   </div>
 
@@ -21,7 +21,7 @@
 
   <div class="row">
     <div class="col-sm-6">
-      <button type="submit" class="btn btn-primary btn-block form-group" >Add To Cart <i-bs
+      <button style="max-width: 10em; " type="submit" class="btn btn-primary btn-block form-group buttons" >Add To Cart <i-bs
         name="cart-plus"
         class="text-success"
         width="2rem"
@@ -31,7 +31,7 @@
 
 
     <div class ="col-sm-6 ">
-      <button type="cancel" class="btn btn-secondary btn-block" (click)="cancel()">Cancel</button>
+      <button style="max-width: 10em; " type="cancel" class="btn btn-secondary btn-block buttons" (click)="cancel()">Cancel</button>
     </div>
   </div>
 </form>

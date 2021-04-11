@@ -45,6 +45,8 @@ import { RegisterComponent } from './register/register.component';
 import {ThemeModule} from './theme/theme.module';
 import {darkTheme} from './theme/dark-theme';
 import {lightTheme} from './theme/light-theme';
+import {RouterModule, Routes} from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const icons = {
   pencilSquare,
@@ -58,6 +60,8 @@ const icons = {
 export function playerFactory() {
   return import('lottie-web');
 }
+
+
 
 @NgModule({
   declarations: [
@@ -77,7 +81,8 @@ export function playerFactory() {
     ContactComponent,
     CreateComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PageNotFoundComponent
   ],
     imports: [
         LottieModule.forRoot({player: playerFactory}),

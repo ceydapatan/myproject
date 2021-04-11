@@ -29,7 +29,6 @@
             <button style="margin-right: 0.8em;" [disabled]="cart.anzahl === 1"(click)="minusOne(cart)" class="btn btn-outline-dark change-amount">-</button>
               <span class="d-block">{{cart.anzahl}}</span>
               <button style="margin-left: 0.8em;" [disabled]="items[cart.id-1].stock<=cart.anzahl" (click)="plusOne(cart)" class="btn btn-outline-dark change-amount" >+</button>
-
               <span class="d-block ml-5 font-weight-bold">{{roundNumber((( items[cart.id-1].price * cart.anzahl)*100)/100)}}</span>
               <i class="fa fa-trash-o ml-3 text-black-50"></i></div>
 

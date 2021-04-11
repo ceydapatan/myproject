@@ -123,7 +123,7 @@ Problembehandlung bei der Eingabe eines Buchstabens
 Problembehandlung: nicht genügend Artikel verfügbar
 ![alt text](./screenshots/nicht-genügend-Artikel-1.png)
 
-![alt text](./screenshots/nicht-genügend-Artikel-erhältlich-2.png)
+![alt text](./screenshots/nicht-genügend-artikel-erhältlich-2.png)
 
 Problembehandlung Warenkorb: Button disabled, wenn nicht genügend Artikel verfügbar sind
 ![alt text](./screenshots/button-disabled.png)

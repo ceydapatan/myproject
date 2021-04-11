@@ -19,12 +19,12 @@ Es werden alle vier CRUD-Funktionalitäten implementiert.*
 
 ## Aufbau und Screenshots
 
-###About-Us-Seite
+### About-Us-Seite
 
 ![alt text](./screenshots/about-us-page.png)
 
 
-###Shop mit Artikeln
+### Shop mit Artikeln
 
 ![alt text](./screenshots/shop-items-1.png)
 
@@ -33,7 +33,7 @@ Es werden alle vier CRUD-Funktionalitäten implementiert.*
 
 ![alt text](./screenshots/shop-items-2-hover.png)
 
-###Suchfunktion
+### Suchfunktion
 
 * Treffer
 
@@ -44,7 +44,7 @@ Es werden alle vier CRUD-Funktionalitäten implementiert.*
 ![alt text](./screenshots/search-no-results.png)
 
 
-##Einzelansicht eines Artikels
+### Einzelansicht eines Artikels
 
 * Dies ist die Einzelansicht eines Artikels. Von hier aus hat man die Möglichkeit,
 zu sehen, wie viele Artikel noch verfügbar sind. Darüber hinaus kann man eine bestimmte Anzahl des Artikels zum Warenkorb hinzufügen oder aber auch einfach zurückgehen, indem man den 'Cancel'-Button betätigt.
@@ -52,7 +52,7 @@ zu sehen, wie viele Artikel noch verfügbar sind. Darüber hinaus kann man eine 
 
 ![alt text](./screenshots/einzelansicht-white-butterfly.png)
 
-###Warenkorb
+### Warenkorb
 * Dies ist die Warenkorbansicht. Hier ist es den UserInnen möglich, zu sehen, wie viele Artikel sich im Warenkorb befinden. Außerdem kann die Menge verändert werden, indem man den '-'/'+' - Button betätigt. Die Buttons werden den verfügbaren Mengen angepasst und entsprechend 'disabled'. Im unten aufgeführten Beispiel ist der Artikel 'Chains' nur noch einmal erhältlich. Dementsprechend ist auch der '+'-Button disabled. Wenn NutzerInnen einen Artikel aus dem Warenkorb vollständig entfernen möchten, so müssen sie dazu den Lösch-Button betätigen, der mit einem Mülleimer gekennzeichnet ist.
 Der zu zahlende Betrag wird aus den Preisen, der im Warenkorb befindlichen Artikel und ihrer Menge berechnet. Darüber hinaus werden bei Bestellungen unter 50 $ Versandkosten dazuberechnet. Diese fallen aus, wenn die Bestellung höhere Kosten aufweist.
 Die  Artikel im Warenkorb können außerdem nach den Preisen sortiert werden.
@@ -83,7 +83,7 @@ Die  Artikel im Warenkorb können außerdem nach den Preisen sortiert werden.
 
 ![alt text](./screenshots/chains-einzelansicht-2.png)
 
-###Kaufabschluss
+### Kaufabschluss
 
 * Der Kauf wird abgeschlossen, indem der 'Checkout'-Button betätigt wird und das darüberliegende Formular ausgefüllt wird.
 Anschließend wird man zu einer anderen Seite weitergeleitet, auf der man darüber benachrichtigt wird, dass der Kauf erfolgreich abgeschlossen wurde. Darüber hinaus wird die Adresse angezeigt, an die die Bestellung geliefert werden soll.
@@ -92,7 +92,7 @@ Anschließend wird man zu einer anderen Seite weitergeleitet, auf der man darüb
 
 ![alt text](./screenshots/checkout.png)
 
-###Nach Kaufabschluss
+### Nach Kaufabschluss
 
 * Nach Kaufabschluss wird die verfügbare Menge der entsprechenden Artikel aktualisiert.
   
